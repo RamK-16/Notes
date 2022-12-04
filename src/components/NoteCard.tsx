@@ -11,12 +11,12 @@ export function NoteCard({ id, title, tags }: SimplifiedNote) {
 	return (
 		<Card
 			as={Link}
-			to={`${id}`}
+			to={`${id}/edit`}
 			className={`h-100 text-reset text-decoration-none ${styles.card}`}
 		>
 			<Card.Body>
 				<Stack direction="horizontal" className="justify-content-between">
-					<span className="fs-5">{title}</span>
+					<span className="fs-5 text-truncate">{title}</span>
 					{tags.length > 0 && (
 						<Stack
 							gap={1}
@@ -24,7 +24,7 @@ export function NoteCard({ id, title, tags }: SimplifiedNote) {
 							className="justify-content-center flex-wrap"
 						>
 							{tags.map((tag) => (
-								<Badge className="text-truncate" key={tag.id}>
+								<Badge className="text-truncate" key={tag.id} style={{maxWidth: '50px'}}>
 									{tag.label}
 								</Badge>
 							))}

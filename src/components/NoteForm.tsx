@@ -1,6 +1,6 @@
 import { FormEvent, useRef, useState } from 'react';
 import { Button, Col, Form, Row, Stack } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import CreatableReactSelect from 'react-select/creatable';
 import { v4 as uuidV4 } from 'uuid';
 import { NoteData, Tag } from '../App';
@@ -9,9 +9,12 @@ type NoteFormProps = {
 	onSubmit: (data: NoteData) => void;
 	onAddTag: (tag: Tag) => void;
 	availableTags: Tag[];
-} & Partial<NoteData>;
+} & Partial<NoteData> &
+	Partial<{ onDelete: (id: string) => void; noteId: string }>;
 
 export function NoteForm({
+	noteId,
+	onDelete,
 	onSubmit,
 	onAddTag,
 	availableTags,
@@ -22,6 +25,7 @@ export function NoteForm({
 	const titleRef = useRef<HTMLInputElement>(null);
 	const markdownRef = useRef<HTMLTextAreaElement>(null);
 	const [selectedTags, setSelectedTags] = useState<Tag[]>(tags);
+	const { pathname } = useLocation();
 	const navigate = useNavigate();
 
 	function handleSubmit(e: FormEvent) {
@@ -32,7 +36,7 @@ export function NoteForm({
 			markdown: markdownRef.current!.value,
 			tags: selectedTags,
 		});
-		navigate('..');
+		navigate('/');
 	}
 
 	return (
@@ -80,16 +84,47 @@ export function NoteForm({
 				</Row>
 				<Form.Group controlId="markdown">
 					<Form.Label>Body</Form.Label>
-					<Form.Control defaultValue={markdown} ref={markdownRef} required as="textarea" rows={15} />
+					<Form.Control
+						defaultValue={markdown}
+						ref={markdownRef}
+						required
+						as="textarea"
+						rows={15}
+					/>
 				</Form.Group>
-				<Stack direction="horizontal" gap={4} className="justify-content-end">
-					<Button type="submit">Save</Button>
-					<Link to="..">
-						<Button type="button" variant="outline-secondary">
-							Cancel
+				{/* <Stack direction="horizontal" gap={1} className=""> */}
+				{/* <Row>
+					<Col sm={12}> */}
+				<Row>
+					<Col
+						xs={pathname !== '/new' ? 9 : 12}
+						md={pathname !== '/new' ? 8 : 12}
+					>
+						<Button style={{ width: '100%' }} type="submit">
+							Save
 						</Button>
-					</Link>
-				</Stack>
+					</Col>
+					<Col
+						style={pathname !== '/new' ? undefined : { display: 'none' }}
+						xs={3}
+						md={4}
+					>
+						<Button
+							onClick={
+								pathname !== '/new'
+									? () => {
+											onDelete!(noteId!);
+											navigate('/');
+									  }
+									: undefined
+							}
+							variant="outline-danger"
+							style={{ width: '100%' }}
+						>
+							Delete
+						</Button>
+					</Col>
+				</Row>
 			</Stack>
 		</Form>
 	);

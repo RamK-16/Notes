@@ -44,12 +44,11 @@ export function NoteList({
 				<Col xs="auto">
 					<Stack gap={2} direction="horizontal">
 						<Link to="/new">
-							<Button variant="primary">Create</Button>
+							<Button size="lg" style={{position: 'absolute', left: '50%', transform: 'translate(-50%, 0)', top: '85vh', borderRadius: '50%'}} variant="primary">+</Button>
 						</Link>
 						<Button
 							onClick={() => {
 								setModalState(true);
-								console.log('111');
 							}}
 							variant="outline-secondary"
 						>

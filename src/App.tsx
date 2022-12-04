@@ -97,7 +97,7 @@ function App() {
 	}
 
 	return (
-		<Container className="my-4">
+		<Container className="my-4" style={{position: 'relative'}}>
 			<Routes>
 				<Route
 					path="/"
@@ -124,6 +124,7 @@ function App() {
 						path="edit"
 						element={
 							<EditNote
+								onDelete={onDeleteNote}
 								onSubmit={onUpdateNote}
 								onAddTag={addTag}
 								availableTags={tags}

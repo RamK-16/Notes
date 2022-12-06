@@ -48,6 +48,7 @@ export function NoteList({
 								size="lg"
 								style={{
 									position: 'absolute',
+									zIndex: 1,
 									left: '50%',
 									transform: 'translate(-50%, 0)',
 									top: '85vh',

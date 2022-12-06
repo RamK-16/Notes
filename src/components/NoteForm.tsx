@@ -78,6 +78,14 @@ export function NoteForm({
 									);
 								}}
 								isMulti
+								styles={{
+									control: (baseStyles, state) => ({
+										...baseStyles,
+										borderColor: state.isFocused ? '#fff3c1' : '#ced4da',
+										// borderRadius:
+										boxShadow: state.isFocused ? '0 0 0 0.25rem rgb(255 230 131 / 25%)' : undefined,
+									}),
+								}}
 							/>
 						</Form.Group>
 					</Col>
@@ -118,7 +126,7 @@ export function NoteForm({
 									  }
 									: undefined
 							}
-							variant="outline-danger"
+							variant="danger"
 							style={{ width: '100%' }}
 						>
 							Delete

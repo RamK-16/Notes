@@ -3,9 +3,9 @@ import { Button, Col, Form, Row, Stack } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import ReactSelect from 'react-select';
 import { Tag } from '../App';
+import lupa from '../assets/306102.svg';
 import { EditTagsModal } from '../components/EditTagsModal';
 import { NoteCard, SimplifiedNote } from '../components/NoteCard';
-
 type NoteListProps = {
 	availableTags: Tag[];
 	notes: SimplifiedNote[];
@@ -44,7 +44,19 @@ export function NoteList({
 				<Col xs="auto">
 					<Stack gap={2} direction="horizontal">
 						<Link to="/new">
-							<Button size="lg" style={{position: 'absolute', left: '50%', transform: 'translate(-50%, 0)', top: '85vh', borderRadius: '50%'}} variant="primary">+</Button>
+							<Button
+								size="lg"
+								style={{
+									position: 'absolute',
+									left: '50%',
+									transform: 'translate(-50%, 0)',
+									top: '85vh',
+									borderRadius: '50%',
+								}}
+								variant="primary"
+							>
+								+
+							</Button>
 						</Link>
 						<Button
 							onClick={() => {
@@ -61,9 +73,13 @@ export function NoteList({
 				<Row className="mb-4">
 					<Col>
 						<Form.Group controlId="title">
-							<Form.Label>Title</Form.Label>
+							<Form.Label className="titles">
+								<img src={lupa} alt="lupa" />
+								Title 
+							</Form.Label>
 							<Form.Control
 								type="text"
+								placeholder='Search...'
 								value={title}
 								onChange={(e) => setTitle(e.target.value)}
 							/>
@@ -71,7 +87,10 @@ export function NoteList({
 					</Col>
 					<Col>
 						<Form.Group controlId="tags">
-							<Form.Label>Tags</Form.Label>
+							<Form.Label className="titles">
+								<img src={lupa} alt="lupa" />
+								Tags
+							</Form.Label>
 							<ReactSelect
 								options={availableTags.map((tag) => {
 									return { label: tag.label, value: tag.id };
@@ -93,6 +112,17 @@ export function NoteList({
 									);
 								}}
 								isMulti
+								styles={{
+									// borderColor: '#fff3c1',
+									control: (baseStyles, state) => ({
+										...baseStyles,
+										borderColor: state.isFocused ? '#fff3c1' : '#ced4da',
+										// borderRadius:
+										boxShadow: state.isFocused
+											? '0 0 0 0.25rem rgb(255 230 131 / 25%)'
+											: undefined,
+									}),
+								}}
 							/>
 						</Form.Group>
 					</Col>

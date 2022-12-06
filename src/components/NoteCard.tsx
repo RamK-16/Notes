@@ -24,7 +24,7 @@ export function NoteCard({ id, title, tags }: SimplifiedNote) {
 							className="justify-content-center flex-wrap"
 						>
 							{tags.map((tag) => (
-								<Badge className="text-truncate" key={tag.id} style={{maxWidth: '50px'}}>
+								<Badge className="text-truncate" key={tag.id} style={{maxWidth: '90px'}}>
 									{tag.label}
 								</Badge>
 							))}

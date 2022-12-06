@@ -1,0 +1,26 @@
+$primary: #ffe683;
+$secondary: #fff;
+// $success: ;
+// $danger: ;
+// $warining: ;
+// $info: ;
+// $light: ;
+// $dark: ;
+// $light: 
+// Light Lime: #abd699
+// Fresh Lemon: #ffe26a
+// Teal: #75c9b7
+// Mint: #c7ddcc
+// Navy: #16123f
+.body {
+  background: linear-gradient(144deg, rgba(171,214,153,1) 0%, rgba(117,201,183,1) 55%);
+  
+  h1, .titles {
+    color: #fff;
+  }
+
+}
+.modal-content {
+  background-color: #c7ddcc !important;
+}
+@import 'node_modules/bootstrap/scss/bootstrap';

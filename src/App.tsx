@@ -1,4 +1,5 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/style.scss';
+
 import { useMemo } from 'react';
 import { Container } from 'react-bootstrap';
 import { Navigate, Route, Routes } from 'react-router-dom';
@@ -97,7 +98,7 @@ function App() {
 	}
 
 	return (
-		<Container className="my-4">
+		<Container fluid className="py-4 body" style={{height: '100vh', overflow: 'auto', position: 'absolute'}}>
 			<Routes>
 				<Route
 					path="/"
@@ -124,6 +125,7 @@ function App() {
 						path="edit"
 						element={
 							<EditNote
+								onDelete={onDeleteNote}
 								onSubmit={onUpdateNote}
 								onAddTag={addTag}
 								availableTags={tags}

@@ -96,7 +96,7 @@ function App() {
 			return prevTags.filter(tag => tag.id !== id);
 		})
 	}
-
+	
 	return (
 		<Container fluid className="py-4 body" >
 			<Routes>
@@ -105,6 +105,7 @@ function App() {
 					element={<NoteList 
 						notes={notesWithTags}
 						availableTags={tags}
+						onDeleteCard={onDeleteNote}
 						onUpdateTag={updateTag}
 						onDeleteTag={deleteTag}
 						/>}

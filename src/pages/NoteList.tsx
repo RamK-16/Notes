@@ -11,6 +11,7 @@ type NoteListProps = {
 	notes: SimplifiedNote[];
 	onUpdateTag: (id: string, label: string) => void;
 	onDeleteTag: (id: string) => void;
+	onDeleteCard: (id: string) => void;
 };
 
 export function NoteList({
@@ -18,6 +19,7 @@ export function NoteList({
 	notes,
 	onDeleteTag,
 	onUpdateTag,
+	onDeleteCard,
 }: NoteListProps) {
 	const [title, setTitle] = useState<string>('');
 	const [selectedTags, setSelectedTags] = useState<Tag[]>([]);
@@ -34,7 +36,7 @@ export function NoteList({
 			);
 		});
 	}, [title, selectedTags, notes]);
-
+	
 	return (
 		<>
 			<Row className="align-items-center mb-4">
@@ -133,7 +135,12 @@ export function NoteList({
 				{filteredNotes.map((note) => {
 					return (
 						<Col key={note.id}>
-							<NoteCard id={note.id} title={note.title} tags={note.tags} />
+							<NoteCard
+								onDeleteCard={onDeleteCard}
+								id={note.id}
+								title={note.title}
+								tags={note.tags}
+							/>
 						</Col>
 					);
 				})}

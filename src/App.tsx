@@ -98,7 +98,7 @@ function App() {
 	}
 
 	return (
-		<Container fluid className="py-4 body" style={{height: '100vh', overflow: 'auto', position: 'absolute'}}>
+		<Container fluid className="py-4 body" >
 			<Routes>
 				<Route
 					path="/"

@@ -14,7 +14,10 @@ $secondary: #fff;
 // Navy: #16123f
 .body {
   background: linear-gradient(144deg, rgba(171,214,153,1) 0%, rgba(117,201,183,1) 55%);
-  
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  overflow: auto;
+  position: absolute;
   h1, .titles {
     color: #fff;
   }
@@ -22,5 +25,8 @@ $secondary: #fff;
 }
 .modal-content {
   background-color: #c7ddcc !important;
+}
+@media (max-width: 500px) {
+  
 }
 @import 'node_modules/bootstrap/scss/bootstrap';

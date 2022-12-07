@@ -6,7 +6,6 @@ import { Tag } from '../App';
 import lupa from '../assets/306102.svg';
 import { EditTagsModal } from '../components/EditTagsModal';
 import { NoteCard, SimplifiedNote } from '../components/NoteCard';
-import { vh } from '../main';
 type NoteListProps = {
 	availableTags: Tag[];
 	notes: SimplifiedNote[];
@@ -51,7 +50,7 @@ export function NoteList({
 									left: '50%',
 									zIndex: 1,
 									transform: 'translate(-50%, 0)',
-									top: 'calc(var(--vh, 1vh) * 100)',
+									top: 'calc(var(--vh, 1vh) * 85)',
 									borderRadius: '50%',
 									position: 'fixed',
 								}}
@@ -77,11 +76,11 @@ export function NoteList({
 						<Form.Group controlId="title">
 							<Form.Label className="titles">
 								<img src={lupa} alt="lupa" />
-								Title 
+								Title
 							</Form.Label>
 							<Form.Control
 								type="text"
-								placeholder='Search...'
+								placeholder="Search..."
 								value={title}
 								onChange={(e) => setTitle(e.target.value)}
 							/>

@@ -18,12 +18,12 @@ export const NewNote = ({
 		<>
     <Row>
       <Col>
-			<h1 className="mb-4">NewNote</h1>
-      </Col>
-      <Col xs="auto">
 			<Link to="/">
 				<Button variant="outline-secondary">Back</Button>
 			</Link>
+      </Col>
+      <Col xs="auto">
+			<h1 className="mb-4">New Note</h1>
       </Col>
     </Row>
 			<NoteForm

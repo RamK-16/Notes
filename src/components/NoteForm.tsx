@@ -45,7 +45,7 @@ export function NoteForm({
 				<Row>
 					<Col>
 						<Form.Group controlId="title">
-							<Form.Label>Title</Form.Label>
+							<Form.Label >Title</Form.Label>
 							<Form.Control ref={titleRef} required defaultValue={title} />
 						</Form.Group>
 					</Col>
@@ -108,7 +108,7 @@ export function NoteForm({
 						xs={pathname !== '/new' ? 9 : 12}
 						md={pathname !== '/new' ? 8 : 12}
 					>
-						<Button style={{ width: '100%' }} type="submit">
+						<Button style={{ width: '100%', color: '#fff' }} type="submit">
 							Save
 						</Button>
 					</Col>
@@ -127,7 +127,8 @@ export function NoteForm({
 									: undefined
 							}
 							variant="danger"
-							style={{ width: '100%' }}
+							style={{ width: '100%', color: '#fff' }}
+
 						>
 							Delete
 						</Button>

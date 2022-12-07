@@ -20,7 +20,7 @@ export function NoteCard({ id, title, tags, onDeleteCard }: SimplifiedNote) {
 	};
 
 	const touchEndHandler = ():void => {
-		if (onTouchEndX()![0] === 'left') {
+		if (onTouchEndX()![0] === 'left' && ref >= 100) {
 			onDeleteCard!(id);
 		} else if(ref > 0 && ref < 100) {
 			setRef(0);

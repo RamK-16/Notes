@@ -47,12 +47,12 @@ export function NoteList({
 							<Button
 								size="lg"
 								style={{
-									position: 'absolute',
-									zIndex: 1,
 									left: '50%',
+									zIndex: 1,
 									transform: 'translate(-50%, 0)',
 									top: '85vh',
 									borderRadius: '50%',
+									position: 'fixed',
 								}}
 								variant="primary"
 							>

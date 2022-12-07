@@ -35,9 +35,10 @@ export function NoteCard({ id, title, tags, onDeleteCard }: SimplifiedNote) {
 			onTouchStart={onTouchStartX}
 			onTouchMove={(e) => touchMoveHandler(e)}
 			onTouchEnd={touchEndHandler}
+			
 			style={
 				(ref > 0 )
-					? { borderRight: `min(${ref}px, 250px) solid orange` }
+					? { borderRight: `min(${ref}px, 250px) solid #dc3545` }
 					: undefined
 			}
 		>

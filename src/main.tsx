@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 
 let vh = window.innerHeight * 0.01;
+console.log(vh);
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(

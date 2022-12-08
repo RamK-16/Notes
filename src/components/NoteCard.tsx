@@ -38,7 +38,7 @@ export function NoteCard({ id, title, tags, onDeleteCard }: SimplifiedNote) {
 			
 			style={
 				(ref > 0 )
-					? { borderRight: `min(${ref}px, 250px) solid #dc3545` }
+					? { borderRight: `min(${ref}px, 250px) solid #dc3545`, borderTop: '1px solid #dc3545', borderBottom: ' 1px solid #dc3545', borderLeft: ' 1px solid #dc3545' }
 					: undefined
 			}
 		>

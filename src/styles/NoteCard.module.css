@@ -5,6 +5,6 @@
 .card:hover,
 .card:focus {
 	filter: grayscale(0);
-	translate: 0 -5px;
+	translate: 0 -3px;
 	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
 }

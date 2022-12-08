@@ -50,9 +50,10 @@ export function NoteList({
 								size="lg"
 								style={{
 									left: '50%',
+									color: '#75c9b7',
 									zIndex: 1,
 									transform: 'translate(-50%, 0)',
-									top: 'calc(var(--vh, 1vh) * 85)',
+									top: 'calc(var(--vh, 1vh) * 90)',
 									borderRadius: '50%',
 									position: 'fixed',
 								}}
@@ -131,7 +132,7 @@ export function NoteList({
 					</Col>
 				</Row>
 			</Form>
-			<Row xs={1} sm={2} lg={3} xl={4} className="g-3">
+			<Row xs={1} sm={2} lg={3} xl={4} className="g-2">
 				{filteredNotes.map((note) => {
 					return (
 						<Col key={note.id}>

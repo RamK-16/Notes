@@ -108,7 +108,7 @@ export function NoteForm({
 						xs={pathname !== '/new' ? 9 : 12}
 						md={pathname !== '/new' ? 8 : 12}
 					>
-						<Button style={{ width: '100%', color: '#fff' }} type="submit">
+						<Button style={{ width: '100%', color: '#75c9b7' }} type="submit">
 							Save
 						</Button>
 					</Col>

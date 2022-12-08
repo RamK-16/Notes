@@ -2,7 +2,7 @@
 # hooks( useLocalStorage, useSwipe (specifically deleting with a swipe)), vercel.json for vite, 
 # modules.css, adaptation for mobile.
 
-Notes
+
 Notes application with the functionality of:
 * creating,
 * editing,
